@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "31219615306",
+    "firebase_url": "https://pick-it-460fc-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "pick-it-460fc",
+    "storage_bucket": "pick-it-460fc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31219615306:android:a68031661451277fdac8b3",
+        "android_client_info": {
+          "package_name": "com.example.pick_it"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2dVSMhfrdQt4hkRLqv-kxp0XM3fFRmrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
