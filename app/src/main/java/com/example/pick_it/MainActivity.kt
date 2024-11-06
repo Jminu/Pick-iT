@@ -25,11 +25,5 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        val id = "s9430939"
-        val password = "1234"
-
-        val authManager = AuthManager()
-        authManager.registerUser(id, password)
     }
 }

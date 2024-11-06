@@ -1,5 +1,7 @@
 package com.example.pick_it;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.google.firebase.database.DataSnapshot;
@@ -20,7 +22,7 @@ class User {
     public User() {
     }
 
-    public void setUserId(String userId){
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -47,6 +49,28 @@ public class AuthManager {
     }
 
     public void loginUser(String userId, String userPw) {
+        DatabaseReference userRef = myRef.child(userId);
+        userRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    User user = snapshot.getValue(User.class);
+                    if(user != null) {
+                        if (user.getUserId().equals(userId) && user.getUserPw().equals(userPw)) {
+                            Log.d("User", "로그인 성공");
+                        } else {
+                            Log.d("User", "아이디 혹은, 비밀번호 오류");
+                        }
+                    }else {
+                        Log.d("User", "로그인실패 : 해당 아이디 존재하지않음");
+                    }
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.w("User", "로그인실패 : 데이터베이스 오류");
+            }
+        });
     }
 }
